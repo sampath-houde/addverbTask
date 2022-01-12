@@ -10,7 +10,7 @@ class RegionOfflineRepo(private val regionDao: RegionDao) {
         get() = regionDao.readAllCountries()
 
 
-    suspend fun addCountries(user: RegionOffline) {
-        regionDao.addCountries(user)
+    suspend fun addCountries(country: RegionOffline) {
+        regionDao.addCountries(country)
     }
 }

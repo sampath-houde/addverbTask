@@ -1,17 +1,16 @@
 package com.example.addverbtask.database
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.example.addverbtask.data.RegionResponse
+import androidx.room.*
 import com.example.addverbtask.database.dao.RegionDao
 import com.example.addverbtask.database.entities.RegionOffline
+import com.example.addverbtask.utils.RegionListConverter
 import com.task.krishinetwork.utils.Constants
 
+@TypeConverters(RegionListConverter::class)
 @Database(entities = [RegionOffline::class], version = 1, exportSchema = false )
 abstract class RegionDatabase: RoomDatabase() {
-    abstract fun userDao(): RegionDao
+    abstract fun regionDao(): RegionDao
 
     companion object {
         @Volatile
