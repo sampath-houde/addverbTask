@@ -1,5 +1,6 @@
-package com.task.krishinetwork.utils
+package com.example.addverbtask.utils
 
+import com.task.krishinetwork.utils.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

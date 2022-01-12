@@ -1,4 +1,4 @@
-package com.task.krishinetwork.utils
+package com.example.addverbtask.utils
 
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +18,9 @@ abstract class BaseRepository {
                 when(throwable) {
 
                     is HttpException -> {
-                        ApiResponseHandler.Failure(false, throwable.code(), throwable.response()?.errorBody())
+                        ApiResponseHandler.Failure(false,
+                            throwable.code(),
+                            throwable.response()?.errorBody())
                     }
 
                     else -> {

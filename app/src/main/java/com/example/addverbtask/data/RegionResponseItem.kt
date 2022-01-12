@@ -1,10 +1,5 @@
 package com.example.addverbtask.data
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import com.task.krishinetwork.utils.Constants
-
-
 class RegionResponse : ArrayList<RegionResponseList>()
 
 data class RegionResponseList(
