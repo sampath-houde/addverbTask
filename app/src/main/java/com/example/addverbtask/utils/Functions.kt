@@ -36,7 +36,7 @@ class RegionListConverter {
 
     @TypeConverter
     fun toRegionList(data: String) : List<RegionResponseList> {
-        val listType: Type = object : TypeToken<Flags>() {}.type
+        val listType: Type = object : TypeToken<List<RegionResponseList>>() {}.type
         return Gson().fromJson(data, listType)
     }
 

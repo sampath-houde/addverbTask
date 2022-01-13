@@ -13,4 +13,8 @@ class RegionOfflineRepo(private val regionDao: RegionDao) {
     suspend fun addCountries(country: RegionOffline) {
         regionDao.addCountries(country)
     }
+
+    suspend fun deleteCountries(country: RegionOffline) {
+        regionDao.delete(country)
+    }
 }

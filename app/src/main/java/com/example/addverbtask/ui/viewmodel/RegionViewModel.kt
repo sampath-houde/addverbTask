@@ -18,6 +18,10 @@ class RegionViewModel(private val offlineRepo: RegionOfflineRepo, private val on
         offlineRepo.addCountries(countries)
     }
 
+    fun deleteCountries(country: RegionOffline) = viewModelScope.launch {
+        offlineRepo.deleteCountries(country)
+    }
+
     //Online
     private val _countriesListOnline: MutableLiveData<ApiResponseHandler<RegionResponse>> = MutableLiveData()
 

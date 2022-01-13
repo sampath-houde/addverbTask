@@ -38,36 +38,29 @@
         android:id="@+id/population"
         android:layout_width="match_parent"
         android:padding="5sp"
-        android:layout_height="wrap_content"
-        tools:text="TextView" />
+        android:text="Population: "
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/region"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5sp"
-        tools:text="TextView" />
+        android:text="Region: " />
 
     <TextView
         android:id="@+id/sub_region"
         android:layout_width="match_parent"
         android:padding="5sp"
         android:layout_height="wrap_content"
-        tools:text="TextView" />
-
-    <TextView
-        android:id="@+id/code"
-        android:layout_width="match_parent"
-        android:padding="5sp"
-        android:layout_height="wrap_content"
-        tools:text="TextView" />
+        android:text="Sub-Region: " />
 
     <TextView
         android:id="@+id/borders"
         android:layout_width="match_parent"
         android:padding="5sp"
         android:layout_height="wrap_content"
-        tools:text="TextView" />
+        android:text="Borders: " />
 
     </LinearLayout>
 

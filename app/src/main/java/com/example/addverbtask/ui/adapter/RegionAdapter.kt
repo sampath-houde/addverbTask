@@ -3,8 +3,10 @@ package com.example.addverbtask.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.example.addverbtask.data.RegionResponse
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.example.addverbtask.R
 import com.example.addverbtask.data.RegionResponseList
 import com.example.addverbtask.databinding.ViewCountryBinding
 
@@ -28,9 +30,15 @@ class RegionAdapter(val onCountryClicked: (RegionResponseList) -> Unit ): Recycl
 
         with(holder) {
             with(list[position]) {
-                binding.countryImg.load(this.flags.svg)
-                binding.countryCapital.text = this.capital[0]
-                binding.countryName.text = this.name.common
+                Glide.with(binding.countryImg)
+                    .load(this.flags?.png)
+                    .placeholder(R.drawable.ic_baseline_broken_image_24)
+                    .transform(FitCenter())
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(binding.countryImg)
+
+                binding.countryCapital.text = this.capital?.let{it[0]}
+                binding.countryName.text = this.name?.common
                 binding.parentLayout.setOnClickListener { onCountryClicked(this) }
             }
         }
